@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIA - Playlists</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <<nav>
+            <div class="logo-container" style="display: flex; align-items: center; gap: 10px;">
+                <img src="images/Aria-logo.png" alt="Aria Logo" style="width: 30px; height: auto;">
+                <span class="logo">ARIA</span>
+            </div>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="search.html">Search</a>
+                <a href="playlist.html">Playlists</a>
+                <a href="profile.html">Profile</a>
+            </div>
+        </nav>
+    </header>
+
+    <main style="display:flex; padding:40px; gap:20px;">
+        <aside id="playlist-menu" class="glass-card" style="width:250px; margin:0;"></aside>
+        
+        <section id="playlist-view" class="glass-card" style="flex-grow:1; margin:0; display: flex; flex-direction: column; align-items: stretch;">
+            <h3 style="text-align: left; margin-bottom: 20px;">Favorites</h3>
+            
+            <div class="song-card" style="display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 8px; margin-bottom: 10px; width: 100%; box-sizing: border-box;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0a/f0/ec/0af0ec0a-6899-496d-7b6b-690bbf82bff6/196874338292.jpg/100x100bb.jpg" width="40" style="border-radius: 4px;">
+                    <span style="font-weight: bold; white-space: nowrap;">WHATS THE MOVE?</span>
+                </div>
+                
+                <button onclick="aria.removeSong('Favorites', '1440843823')" style="background: #ff4c4c; color: white; border: none; padding: 8px 15px; border-radius: 8px; cursor: pointer; flex-shrink: 0;">
+                    Remove
+                </button>
+            </div>
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ARIA Music Streamer. All rights reserved.</p>
+    </footer>
+    <script src="api.js"></script>
+    <script>aria.updatePlaylistUI();</script>
+</body>
+</html>

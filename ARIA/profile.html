@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIA - Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container" style="display: flex; align-items: center; gap: 10px;">
+                <img src="images/Aria-logo.png" alt="Aria Logo" style="width: 30px; height: auto;">
+                <span class="logo">ARIA</span>
+            </div>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="search.html">Search</a>
+                <a href="playlist.html">Playlists</a>
+                <a href="profile.html">Profile</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="glass-card" style="text-align:center;">
+        <section>
+            <h2>Profile Information</h2>
+            <div class="profile-circle"><img id="prof-img" src="https://cobaltsettlements.com/wp-content/uploads/2019/03/blank-profile.jpg" alt="Profile Picture"></div>
+            <input type="file" onchange="aria.updatePfp(this.files[0])">
+            <h3 id="prof-name"></h3>
+            <p id="prof-email"></p>
+            <p><strong>Phone:</strong> <span id="prof-phone"></span></p>
+            <p><strong>Location:</strong> <span id="prof-city"></span>, <span id="prof-state"></span></p>
+        </section>
+
+        <hr style="border:0; border-top:1px solid rgba(255,255,255,0.2); margin:20px 0;">
+
+        <section>
+            <h4>Update Details</h4>
+            <input id="in-phone" type="tel" placeholder="Phone Number">
+            <input id="in-city" type="text" placeholder="City">
+            <input id="in-state" type="text" placeholder="State (XX)">
+            <button onclick="aria.updateProfileInfo(document.getElementById('in-phone').value, document.getElementById('in-city').value, document.getElementById('in-state').value)">Save Changes</button>
+            <br><br>
+            <button onclick="aria.logout()" style="background:#ff4c4c">Sign Out</button>
+        </section>
+    </main>
+
+    <script src="api.js"></script>
+    <script>aria.loadProfileData();</script>
+</body>
+</html>
